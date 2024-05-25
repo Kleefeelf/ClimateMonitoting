@@ -1,0 +1,9 @@
+button {
+  color: #646cff;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

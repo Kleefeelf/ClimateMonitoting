@@ -1,0 +1,20 @@
+.devices-list {
+  height: auto;
+  margin: 20px;
+  margin-bottom: 50px;
+  padding: 0;
+}
+
+.devices-item {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 10px 50px;
+
+  box-sizing: border-box;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.devices-item:hover {
+  transform: translateY(1px);
+}
