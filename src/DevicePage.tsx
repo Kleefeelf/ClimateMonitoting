@@ -77,7 +77,7 @@ function DevicePage() {
 
   return (
     <div>
-      <h2>Device Data</h2>
+      <h2>Device {deviceId} Data</h2>
       <div style={{ width: "800px", height: "400px" }}>
         <Line key={chartKey} data={chartData} options={options} />
       </div>

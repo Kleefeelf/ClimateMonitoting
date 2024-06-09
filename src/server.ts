@@ -15,22 +15,15 @@ const options: cors.CorsOptions = {
 };
 app.use(cors(options));
 app.use(function (req, res, next) {
-  // Website you wish to allow to connect
   res.setHeader('Access-Control-Allow-Origin', '*');
-
-  // Request methods you wish to allow
   res.setHeader(
     'Access-Control-Allow-Methods',
     'GET, POST, OPTIONS, PUT, PATCH, DELETE'
   );
-
-  // Request headers you wish to allow
   res.setHeader(
     'Access-Control-Allow-Headers',
     'X-Requested-With,content-type'
   );
-
-  // Pass to next layer of middleware
   next();
 });
 // app.options('/*', function (req, res) {
@@ -63,7 +56,6 @@ app.get('/', (req: Request, res: Response) => {
   res.send('Hello, TypeScript Express!');
 });
 
-// GET temperature by device ID
 app.get('/temperature/:deviceId', (req, res) => {
   const { deviceId } = req.params;
   connection.query(
@@ -80,7 +72,6 @@ app.get('/temperature/:deviceId', (req, res) => {
   );
 });
 
-// GET humidity by device ID
 app.get('/humidity/:deviceId', (req, res) => {
   const { deviceId } = req.params;
   connection.query(
@@ -115,7 +106,6 @@ app.post('/temperature', (req, res) => {
   );
 });
 
-// Refactored /humidity endpoint
 app.post('/humidity', (req, res) => {
   const { device_id, value } = req.body;
   const date = generateNewDate();
@@ -133,6 +123,7 @@ app.post('/humidity', (req, res) => {
     }
   );
 });
+
 app.post('/registration', (req, res) => {
   const { username, password } = req.body;
   connection.query(
